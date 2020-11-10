@@ -68,18 +68,53 @@ function resetValues() {
   seekSlider.value = 0;
 }
 
-// let repeatBtn = document.querySelector(".repeat-track");
+let repeatBtn = document.querySelector(".repeat-track");
 
-// repeatBtn.onclick = function repeatTrack() {
+// repeatBtn.addEventListener("click", function loopTrack() {
+//   currTrack.loop = true;
+//   repeatBtn.style.color = "aqua";
+// })
+
+// repeatBtn.addEventListener("click", function unloopTrack() {
+//   currTrack.loop = false;
+//   repeatBtn.style.color = "white";
+// })
+
+// currTrack.loop = false;
+
+// repeatBtn.onclick = function loopTrack() {
+//   if (currTrack.loop === true) {
+//     repeatBtn.style.color = "aqua";
+//     currTrack.addEventListener('ended', function () {
+//       currTrack.currentTime = 0;
+//       currTrack.play();
+//     }, false)
+//   } else {
+//     repeatBtn.style.color = "white";
+//   }
+// }
+
+// repeatBtn.onclick = function loopTrack() {
+//   currTrack.loop = true;
+//   repeatBtn.style.color = "aqua";
+// }
+
+// repeatBtn.onclick = function unloopTrack() {
+//   currTrack.loop = false;
+//   repeatBtn.style.color = "white";
+// }
+
+// repeatBtn.onclick = function loopTrack() {
 //   if (repeatBtn.loop !== true) {
 //     currTrack.loop = true;
+//     repeatBtn.style.color = "aqua";
 //   } else {
 //     currTrack.addEventListener('ended', function () {
+//       repeatBtn.style.color = "white";
 //       currTrack.currentTime = 0;
 //       currTrack.play();
 //     }, false);
 //   }
-//   currTrack.play();
 // }
 
 // repeatBtn.loop = false;
@@ -152,7 +187,7 @@ function pauseTrack() {
 playpauseBtn.onclick = function playpauseTrack() {
   if (!isPlaying) playTrack();
   else pauseTrack();
-}
+};
 
 nextBtn.onclick = function nextTrack() {
   if (trackIndex < trackList.length - 1) trackIndex += 1;
@@ -160,7 +195,7 @@ nextBtn.onclick = function nextTrack() {
 
   loadTrack(trackIndex);
   playTrack();
-}
+};
 
 prevBtn.onclick = function prevTrack() {
   if (trackIndex > 0) trackIndex -= 1;
@@ -168,22 +203,28 @@ prevBtn.onclick = function prevTrack() {
 
   loadTrack(trackIndex);
   playTrack();
-}
+};
 
 seekSlider.onchange = function seekTo() {
   let seekto = currTrack.duration * (seekSlider.value / 100);
 
   currTrack.currentTime = seekto;
-}
+};
 
 volumeSlider.onchange = function setVolume() {
   currTrack.volume = volumeSlider.value / 100;
-}
+};
 
 toggleSongList.addEventListener("click", function () {
   toggleSongList.classList.toggle("active");
   player.classList.toggle("activeSongList");
 });
+
+
+
+if (volumeSlider.value === 0) {
+  volDown.innerHTML = '<i class="fas fa-volume-mute"></i>';
+}
 
 list.innerHTML = trackList
   .map(function (track, trackIndex) {

@@ -93,11 +93,15 @@ body {
   align-items: center;
 }
 
+.slider_container input {
+  outline: none;
+}
+
 .seek_slider,
 .volume_slider {
   appearance: none;
   height: 7px;
-  background: rgb(0, 0, 0);
+  background: rgb(83, 83, 83);
   transition: .2s;
   transition: opacity .2s;
 }
@@ -131,7 +135,8 @@ body {
 }
 
 i.fa-volume-down,
-i.fa-volume-up {
+i.fa-volume-up,
+i.fa-volume-mute {
   padding: 10px;
 }
 
