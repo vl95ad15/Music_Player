@@ -132,7 +132,7 @@ function loadTrack(trackIndex) {
 
   updateTimer = setInterval(seekUpdate, 1000);
 
-  currTrack.addEventListener("ended", this.nextTrack);
+  currTrack.addEventListener("ended", nextBtn.onclick);
 }
 
 function playTrack() {
