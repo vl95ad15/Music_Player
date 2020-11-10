@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 670px;
+  overflow: hidden;
+}
+
+.player .main {
+  width: 100%;
+  height: 100%;
+  transition: all 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  background: rgba(34, 34, 34, 0.91);
+  color: rgb(255, 255, 255);
+  border-radius: 3%;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.track-art {
+  margin: 25px;
+  height: 300px;
+  width: 300px;
+  background: URL("https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Vinyl_record.svg/1200px-Vinyl_record.svg.png") center / cover;
+  border-radius: 50%;
+}
+
+.track-name {
+  font-size: 2.3rem;
+}
+
+.track-artist {
+  font-size: 1.3rem;
+}
+
+.playpause-track,
+.prev-track,
+.next-track,
+.repeat-track {
+  padding: 25px;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.repeat-track {
+  position: absolute;
+  right: 9%;
+  bottom: 3%;
+}
+
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover,
+.repeat-track:hover {
+  opacity: 1.0;
+}
+
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seek_slider,
+.volume_slider {
+  appearance: none;
+  height: 7px;
+  background: rgb(0, 0, 0);
+  transition: .2s;
+  transition: opacity .2s;
+}
+
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1.0;
+}
+
+.seek_slider {
+  width: 60%;
+}
+
+.volume_slider {
+  width: 30%;
+}
+
+.current-time,
+.total-duration {
+  padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+  padding: 10px;
+}
+
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward,
+.seek_slider,
+.volume_slider,
+.toggle-list,
+.repeat-track {
+  cursor: pointer;
+}

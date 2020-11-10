@@ -1,0 +1,89 @@
+.player .player-list {
+  position: absolute;
+  width: 100%;
+  margin-top: -20px;
+  height: 350px;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  transition: all 500ms ease-in-out;
+}
+
+.player .player-list .toggle-list {
+  position: sticky;
+  top: 0px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  background: rgb(56, 56, 56);
+}
+
+.player .player-list .toggle-list i.fa {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.player .player-list .toggle-list i.fa-angle-down {
+  display: none;
+}
+
+.player .player-list .toggle-list.active i.fa-angle-up {
+  display: block;
+}
+
+.player .player-list .toggle-list.active i.fa-angle-up {
+  display: none;
+}
+
+.player .player-list .toggle-list.active i.fa-angle-down {
+  display: block;
+}
+
+.player .list {
+  padding: 10px;
+}
+
+.player .list .item {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0px;
+  border-bottom: 2px solid #222;
+  cursor: pointer;
+}
+
+.player .list .item .cover {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.player .list .cover img {
+	width: 100%;
+  height: 100%;
+}
+
+.player .list .item:hover {
+  background-color: #555;
+}
+
+.player .list .item .details-list {
+  padding: 0px 10px;
+}
+
+.player .list .item .details-list p {
+  color: rgb(216, 216, 216);
+  font-size: 15px;
+}
+
+.player .list .item .details-list .track-list-name {
+  font-weight: bolder;
+}
+
+.player.activeSongList .player-list {
+  margin-top: -350px;
+}
+
+.player.activeSongList .main {
+  filter: blur(5px);
+}

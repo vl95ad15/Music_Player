@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/list.css">
+  <title>JustPlay</title>
+</head>
+
+<body>
+  <noscript>Please turn JavaScript on</noscript>
+  <div class="player">
+    <div class="main">
+
+      <div class="details">
+        <div class="track-art"></div>
+        <div class="track-name">Track Name</div>
+        <div class="track-artist">Track Artist</div>
+      </div>
+
+      <div class="buttons">
+        <div class="prev-track">
+          <i class="fa fa-step-backward fa-2x"></i>
+        </div>
+        <div class="playpause-track">
+          <i class="fa fa-play-circle fa-5x"></i>
+        </div>
+        <div class="next-track">
+          <i class="fa fa-step-forward fa-2x"></i>
+        </div>
+        <div class="repeat-track">
+          <i class="fa fa-redo""></i>
+        </div>
+      </div>
+
+      <div class="slider_container">
+        <div class="current-time">00:00</div>
+        <input type="range" min="1" max="100" value="0" class="seek_slider">
+        <div class="total-duration">00:00</div>
+      </div>
+
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="1" max="100" value="50" class="volume_slider">
+        <i class="fa fa-volume-up"></i>
+      </div>
+    </div>
+    <div class="player-list">
+      <div class="toggle-list">
+        <i class="fa fa-angle-up"></i>
+        <i class="fa fa-angle-down"></i>
+      </div>
+      <div class="list">
+      </div>
+    </div>
+  </div>
+
+  <script src="../src/main.js">
+  
+    const load = () => {
+      startApplication(document);
+    }
+    window.onload = load;
+  </script>
+
+</body>
+
+</html>
