@@ -8,25 +8,31 @@
   z-index: 2;
   transition: all 500ms ease-in-out;
 }
+
 ::-webkit-scrollbar {
   width: 12px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(transparent,#00ffc8);
+  background: linear-gradient(transparent, #00ffc8);
   border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(transparent,#00c3ff);
+  background: linear-gradient(transparent, #00c3ff);
 }
+
 ::-moz-scrollbar {
   width: 5px;
 }
+
 ::-moz-scrollbar-thumb {
-  background: linear-gradient(transparent,#00ffc8);
+  background: linear-gradient(transparent, #00ffc8);
   border-radius: 6px;
 }
+
 ::-moz-scrollbar-thumb:hover {
-  background: linear-gradient(transparent,#00c3ff);
+  background: linear-gradient(transparent, #00c3ff);
 }
 
 .player .player-list .toggle-list {
@@ -67,19 +73,25 @@
 .player .list .item {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 5px 0px;
   border-bottom: 2px solid #222;
   cursor: pointer;
 }
 
+.player .list .item .info {
+  display: flex;
+  flex-direction: row;
+}
+
 .player .list .item .cover {
-	width: 50px;
-	height: 50px;
-	overflow: hidden;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
 }
 
 .player .list .cover img {
-	width: 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -106,4 +118,9 @@
 
 .player.activeSongList .main {
   filter: blur(5px);
+}
+
+.player .list .item .is-playing-now{
+  color: #00ffc8;
+  display: none;
 }

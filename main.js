@@ -11,6 +11,8 @@ let trackArtist = document.querySelector(".track-artist");
 let playpauseBtn = document.querySelector(".playpause-track");
 let nextBtn = document.querySelector(".next-track");
 let prevBtn = document.querySelector(".prev-track");
+let repeatBtn = document.querySelector(".repeat-track");
+let shuffleBtn = document.querySelector(".shuffle");
 
 let seekSlider = document.querySelector(".seek_slider");
 let volumeSlider = document.querySelector(".volume_slider");
@@ -68,56 +70,28 @@ function resetValues() {
   seekSlider.value = 0;
 }
 
-let repeatBtn = document.querySelector(".repeat-track");
+shuffleBtn.addEventListener("click", function shuffleTrack() {
+  let currentIndex = trackList.length,
+    temporaryValue, randomIndex;
 
-// repeatBtn.addEventListener("click", function loopTrack() {
-//   currTrack.loop = true;
-//   repeatBtn.style.color = "aqua";
-// })
+  while (currentIndex !== 0) {
 
-// repeatBtn.addEventListener("click", function unloopTrack() {
-//   currTrack.loop = false;
-//   repeatBtn.style.color = "white";
-// })
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-// currTrack.loop = false;
+    temporaryValue = trackList[currentIndex];
+    trackList[currentIndex] = trackList[randomIndex];
+    trackList[randomIndex] = temporaryValue;
+  }
+  shuffleBtn.classList.add("shuffle-enabled");
+  return trackList;
+});
 
-// repeatBtn.onclick = function loopTrack() {
-//   if (currTrack.loop === true) {
-//     repeatBtn.style.color = "aqua";
-//     currTrack.addEventListener('ended', function () {
-//       currTrack.currentTime = 0;
-//       currTrack.play();
-//     }, false)
-//   } else {
-//     repeatBtn.style.color = "white";
-//   }
-// }
-
-// repeatBtn.onclick = function loopTrack() {
-//   currTrack.loop = true;
-//   repeatBtn.style.color = "aqua";
-// }
-
-// repeatBtn.onclick = function unloopTrack() {
-//   currTrack.loop = false;
-//   repeatBtn.style.color = "white";
-// }
-
-// repeatBtn.onclick = function loopTrack() {
-//   if (repeatBtn.loop !== true) {
-//     currTrack.loop = true;
-//     repeatBtn.style.color = "aqua";
-//   } else {
-//     currTrack.addEventListener('ended', function () {
-//       repeatBtn.style.color = "white";
-//       currTrack.currentTime = 0;
-//       currTrack.play();
-//     }, false);
-//   }
-// }
-
-// repeatBtn.loop = false;
+repeatBtn.onclick = function() {
+  currTrack.loop = true;
+  repeatBtn.style.color = "aqua";
+  repeatBtn.classList.add("loop-enabled");
+}
 
 function seekUpdate() {
   let seekPosition = 0;
@@ -220,27 +194,32 @@ toggleSongList.addEventListener("click", function () {
   player.classList.toggle("activeSongList");
 });
 
-
-
-if (volumeSlider.value === 0) {
-  volDown.innerHTML = '<i class="fas fa-volume-mute"></i>';
-}
-
 list.innerHTML = trackList
   .map(function (track, trackIndex) {
     return `
     <div class="item" songIndex="${trackIndex}">
+    <div class="info">
       <div class="cover">
 				<img src="${track.image}">
 			</div>
 			<div class="details-list">
 				<p class="track-list-name">${track.name}<p>
 				<p class="track-list-artist">${track.artist}</p>
-			</div>
+      </div>
+      </div>
+      <div class="is-playing-now">
+        <i class="fa fa-volume-up"></i>
+      </div>
 		</div>
 	`;
   })
   .join("");
+
+  // let isPlayingNow = document.querySelector(".is-playing-now");
+
+  // if (!Audio.paused) {
+  //   isPlayingNow.style.display = "block";
+  // }
 
 let trackListItems = document.querySelectorAll(".item");
 for (let i = 0; i < trackListItems.length; i += 1) {
@@ -249,7 +228,8 @@ for (let i = 0; i < trackListItems.length; i += 1) {
     loadTrack(trackIndex);
     playTrack();
     player.classList.remove("activeSongList");
+    toggleSongList.classList.remove("active");
   });
-}
+};
 
 loadTrack(trackIndex);
