@@ -30,37 +30,37 @@ const trackList = [{
     name: "Maito",
     artist: "Smarnav",
     image: "https://avatars.yandex.net/get-music-content/108289/f5621048.a.7522327-1/m1000x1000",
-    path: "../music/Smarnav_Maito.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Smarnav_Maito.mp3",
   },
   {
     name: "Light of Eternity",
     artist: "Domitori Taranofu",
     image: "https://sun9-18.userapi.com/d-JINWMY2QBkmzoQ7wA20hlzQL-fAj2_zc29iA/eXZBU3cqTD8.jpg",
-    path: "../music/Domitori_Taranofu_Light_of_Eternity.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Domitori_Taranofu_Light_of_Eternity.mp3",
   },
   {
     name: "Wood",
     artist: "Dan Henig",
     image: "https://i.ytimg.com/vi/jQtViazW_mM/maxresdefault.jpg",
-    path: "../music/Dan_Henig_Wood.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Dan_Henig_Wood.mp3",
   },
   {
     name: "Omega",
     artist: "Scott Buckley",
     image: "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/08/Omega-wide-01.jpg",
-    path: "../music/Scott_Buckley_Omega.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Scott_Buckley_Omega.mp3",
   },
   {
     name: "Ruska",
     artist: "Kupla",
     image: "https://chillhop.com/wp-content/uploads/2018/12/Bandcamp-Background-only-winter2018.jpg",
-    path: "../music/Kupla_Ruska.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Kupla_Ruska.mp3",
   },
   {
     name: "Lost Love",
     artist: "Toonorth",
     image: "https://i.ytimg.com/vi/gOJ5jH5InsQ/maxresdefault.jpg",
-    path: "../music/Toonorth_Lost Love.mp3",
+    path: "https://vl95ad15.github.io/Music_Player/music/Toonorth_Lost Love.mp3",
   },
 ];
 
