@@ -54,7 +54,7 @@ const trackList = [{
     name: "Ruska",
     artist: "Kupla",
     image: "https://chillhop.com/wp-content/uploads/2018/12/Bandcamp-Background-only-winter2018.jpg",
-    path: "../music/Kupla_Ruska.mp3.mp3",
+    path: "../music/Kupla_Ruska.mp3",
   },
   {
     name: "Lost Love",
